@@ -119,20 +119,29 @@ void draw() {
           groundhogX -= groundhogSpeed;
             image(groundhogLeftImg,groundhogX,groundhogY);
           if(groundhogX %80 == 0){actState = Idle;}
-          if(groundhogX < 0){ groundhogX = 0;}
+          if(groundhogX < 0){ 
+            groundhogX = 0;
+            actState = Idle;
+          }
           break;
         case Down:
           groundhogY += groundhogSpeed;
             image(groundhogDownImg,groundhogX,groundhogY);
          if(groundhogY %80 == 0){actState = Idle;}
           
-          if(groundhogY > height-groundhogWidth){groundhogY=height-groundhogWidth;}
+          if(groundhogY > height-groundhogWidth){
+              groundhogY=height-groundhogWidth;
+              actState = Idle;
+          }
           break;
         case Right:
           groundhogX += groundhogSpeed;
             image(groundhogRightImg,groundhogX,groundhogY);
           if(groundhogX %80 == 0){actState = Idle;}
-          if(groundhogX > width-groundhogWidth){groundhogX = width-groundhogWidth;}
+          if(groundhogX > width-groundhogWidth){
+            groundhogX = width-groundhogWidth;
+            actState = Idle;
+          }
           break;
       }
       //cabbage
